@@ -91,7 +91,7 @@ Once the dependencies have been installed we can move over our function from the
 
 <img width=900 class="compute" src="https://github.com/markbuckle/AWS-CDK/blob/main/compute-folder.png?raw=true">
 
-In the infrastructure_stack.py file, import the lastest aws_lambda package from the documentation and create a new fucntion object:
+In the infrastructure_stack.py file, import the lastest aws_lambda package from the [documentation](https://docs.aws.amazon.com/lambda/) and create a new fucntion object:
 
 ```sh
 from aws_cdk import aws_lambda
