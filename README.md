@@ -111,7 +111,20 @@ Finally run:
 ```sh
 cdk deploy
 ```
+Head to the AWS Lambda function console to see if your new function with the code is stored.
 
 ### Create the API integration
+
+Now that we have our Lambda function in the cloud, we can add our API integration
+
+Add the latest [gateway integration module](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_apigatewayv2-readme.html) into the requriements.txt file:
+
+aws_cdk.aws_apigatewayv2
+aws_cdk.aws_apigatewayv2_integrations
+
+Re-run:
+```sh
+pip install -r requirements.txt
+```
 
 ### Wrapping up
