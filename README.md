@@ -119,8 +119,8 @@ Now that we have our Lambda function in the cloud, we can add our API integratio
 
 Add the latest [gateway integration module](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_apigatewayv2-readme.html) into the requriements.txt file:
 
-aws_cdk.aws_apigatewayv2
-aws_cdk.aws_apigatewayv2_integrations
+<li>aws_cdk.aws_apigatewayv2</li>
+<li>aws_cdk.aws_apigatewayv2_integrations</li>
 
 Re-run:
 ```sh
