@@ -26,8 +26,8 @@ CDK will allow us to find and deploy our Lambda function & API Gateway integrati
 
 ###  Prerequisites
 
-<ls>AWS CLI</ls>
-<ls>NodeJS (with npm)</ls>
+<ol>AWS CLI</ol>
+<ol>NodeJS (with npm)</ol>
 
 ### Install and bootstrap CDK
 
