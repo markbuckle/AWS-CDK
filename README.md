@@ -91,6 +91,27 @@ Once the dependencies have been installed we can move over our function from the
 
 <img width=900 class="compute" src="https://github.com/markbuckle/AWS-CDK/blob/main/compute-folder.png?raw=true">
 
+In the infrastructure_stack.py file, import the lastest aws_lambda package from the documentation and create a new fucntion object:
+
+```sh
+from aws_cdk import aws_lambda
+```
+
+```sh
+# The code that defines your stack goes here
+ random_drink_function =aws_lambda.Function(
+            self, # the logical resource that will be the owner of this lambda function
+            id="RandomDrinkFunctionV2", # give it a random name
+            code=aws_lambda.Code.from_asset("./compute/"), # where Lambda finds the code, pointed to our compute folder
+            handler="random_drink_lambda_handler", # specified handler, which is the python function and package we want Lambda to use when it is triggered
+            runtime=aws_lambda.Runtime.PYTHON_3_12 # tell it what runtime to use
+            )
+```
+Finally run:
+```sh
+cdk deploy
+```
+
 ### Create the API integration
 
 ### Wrapping up
