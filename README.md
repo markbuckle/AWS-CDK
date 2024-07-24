@@ -87,9 +87,9 @@ Install the modules using this command:
 ```sh
 pip install -r requirements.txt
 ```
-Once the dependencies have been installed we can move over our function from the [AWS Lambda->functions console](https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions) into a folder within /infrastructure called /compute:
+Once the dependencies have been installed we can move over our function from the [AWS Lambda->functions console](https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions) into a folder within /infrastructure called /compute.
 
-<img width=600 class="compute" src="https://github.com/markbuckle/AWS-Python-Deploy/blob/main/compute-folder.png?raw=true">
+<img width=600 class="compute" src="https://github.com/markbuckle/AWS-CDK/blob/main/compute-folder.png?raw=true">
 
 ### Create the API integration
 
