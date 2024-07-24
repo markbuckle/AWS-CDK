@@ -18,7 +18,8 @@ Popular Infrastructure-as-Code (IAC) Frameworks include Terraform, Ansible, Pulu
 
 ### AWS CDK
 
-**Architecture**
+#### Architecture
+
 <img width=600 class="Architecture" src="https://github.com/markbuckle/AWS-Python-Deploy/blob/main/Architecture.png?raw=true">
 
 ###  Prerequisites
