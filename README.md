@@ -29,11 +29,67 @@ CDK will allow us to find and deploy our Lambda function & API Gateway integrati
 <ol>1. AWS CLI</ol>
 <ol>2. NodeJS (with npm)</ol>
 
+Once installed, try the following commands so that everything is setup to be working properly:
+
+```sh
+aws sts get-caller-identity
+```
+^ this prooves that you have AWS CLI configured and that you are using the correct account
+
+```sh
+npm --version
+```
+to check that you have the right node version installed
+
 ### Install and bootstrap CDK
 
+Install the latest cdk version:
+```sh
+npm install -g aws-cdk@latest
+```
+
+check that it is working by typing:
+```sh
+cdk --version
+```
+Next run a boostrap CDK
+```sh
+cdk bootstrap aws://{account#}/{region}
+```
+
+Once you run this it will create something called a cloud formation stack in your account for that region. A cloud formation stack is essentially logical grouping for your resources.
+
 ### Create your project
+Create a new folder:
+```sh
+mkdir infrastructure
+```
+Navigate to that folder:
+```sh
+cd infrastructure
+```
+Type:
+```sh
+cdk init --language python
+```
+You will see that the last command made a bunch of files for us. When we deploy these files it will create another cloud formation stack in our account.
 
 ### Create the Lambda function
+
+Now we have to add the Lambda function and API Gateway from the first tutorial to our resources stack. 
+
+First, add the below to the requirements.txt file:
+```sh
+aws-cdk.core
+aws-cdk.aws_lambda
+```
+Install the modules using this command:
+```sh
+pip install -r requirements.txt
+```
+Once the dependencies have been installed we can move over our function from the [AWS Lambda->functions console](https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions) into a folder within /infrastructure called /compute:
+
+<img width=600 class="Architecture" src="https://github.com/markbuckle/AWS-Python-Deploy/blob/main/compute-folder.png?raw=true">
 
 ### Create the API integration
 
