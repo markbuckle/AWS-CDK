@@ -18,11 +18,16 @@ Popular Infrastructure-as-Code (IAC) Frameworks include Terraform, Ansible, Pulu
 
 ### AWS CDK
 
-#### Architecture
+#### Architecture:
 
 <img width=600 class="Architecture" src="https://github.com/markbuckle/AWS-Python-Deploy/blob/main/Architecture.png?raw=true">
 
+CDK will allow us to find and deploy our Lambda function & API Gateway integration as code. 
+
 ###  Prerequisites
+
+<ls>AWS CLI</ls>
+<ls>NodeJS (with npm)</ls>
 
 ### Install and bootstrap CDK
 
