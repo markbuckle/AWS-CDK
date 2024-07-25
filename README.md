@@ -1,6 +1,8 @@
 ## Infrastructure as Code: How to Deploy an Python Lambda Function using the AWS Cloud Development Kit (CDK)
 
-In this tutorial, we re-created the Python Lambda function and API Gateway from the previous tutorial using "infrastructure-as-code" (with AWS CDK). We will use the Python version of CDK to allow us to manage more projects, bootstrap or migrate projects to different accounts.
+We can use the Python version of CDK to allow us to manage projects, bootstrap or migrate projects to different accounts.
+
+In this tutorial, we re-created the Python Lambda function and API Gateway from the previous tutorial using "infrastructure-as-code" (with AWS CDK) and deployed it.
 
 ### Infrastructure as code
 
