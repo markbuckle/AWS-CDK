@@ -1,6 +1,8 @@
 ## Infrastructure as Code: How to Deploy an Python Lambda Function using the AWS Cloud Development Kit (CDK)
 
-In this tutorial, we re-created the Python Lambda function and API Gateway from the previous tutorial using "infrastructure-as-code" (with AWS CDK). We will use the Python version of CDK to allow us to manage more projects, bootstrap or migrate projects to different accounts.
+We can use the Python version of CDK to allow us to manage projects, bootstrap or migrate projects to different accounts.
+
+In this tutorial, we re-created the Python Lambda function and API Gateway from the previous tutorial using "infrastructure-as-code" (with AWS CDK) and deployed it.
 
 ### Infrastructure as code
 
@@ -87,10 +89,54 @@ Install the modules using this command:
 ```sh
 pip install -r requirements.txt
 ```
-Once the dependencies have been installed we can move over our function from the [AWS Lambda->functions console](https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions) into a folder within /infrastructure called /compute:
+Once the dependencies have been installed we can move over our function from the [AWS Lambda->functions console](https://us-east-1.console.aws.amazon.com/lambda/home?region=us-east-1#/functions) into a folder within /infrastructure called /compute.
 
-<img width=600 class="Architecture" src="https://github.com/markbuckle/AWS-Python-Deploy/blob/main/compute-folder.png?raw=true">
+<img width=900 class="compute" src="https://github.com/markbuckle/AWS-CDK/blob/main/compute-folder.png?raw=true">
+
+In the infrastructure_stack.py file, import the lastest aws_lambda package from the [documentation](https://docs.aws.amazon.com/lambda/) and create a new fucntion object:
+
+```sh
+from aws_cdk import aws_lambda
+```
+
+```sh
+# The code that defines your stack goes here
+ random_drink_function =aws_lambda.Function(
+            self, # the logical resource that will be the owner of this lambda function
+            id="RandomDrinkFunctionV2", # give it a random name
+            code=aws_lambda.Code.from_asset("./compute/"), # where Lambda finds the code, pointed to our compute folder
+            handler="random_drink_lambda_handler", # specified handler, which is the python function and package we want Lambda to use when it is triggered
+            runtime=aws_lambda.Runtime.PYTHON_3_12 # tell it what runtime to use
+            )
+```
+Finally run:
+```sh
+cdk deploy
+```
+Head to the AWS Lambda function console to see if your new function with the code is stored.
 
 ### Create the API integration
 
-### Wrapping up
+Now that we have our Lambda function in the cloud, we can add our API integration
+
+Update your infrastructure_stack.py file to include gatewayv2"
+
+```sh
+from aws_cdk import (
+    aws_apigatewayv2 as apigwv2,
+    aws_apigatewayv2_integrations as integrations,
+)
+```
+Re-run:
+```sh
+pip install -r requirements.txt
+```
+Run:
+```sh
+cdk deploy
+```
+Go back to AWS Kambda -> Functions and you should find the API Gateway trigger already connected to your Lambda function. When you open the URL provided it should work.
+
+### Full Tutorial video
+
+[AWS CDK Tutorial: Deploy a Python Lambda Function using AWS](https://www.youtube.com/watch?v=o3s4VqlMsT8)
