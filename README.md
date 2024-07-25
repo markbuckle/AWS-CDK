@@ -119,14 +119,24 @@ Head to the AWS Lambda function console to see if your new function with the cod
 
 Now that we have our Lambda function in the cloud, we can add our API integration
 
-Add the latest [gateway integration module](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_apigatewayv2-readme.html) into the requriements.txt file:
+Update your infrastructure_stack.py file to include gatewayv2"
 
-<li>aws_cdk.aws_apigatewayv2</li>
-<li>aws_cdk.aws_apigatewayv2_integrations</li>
-
+```sh
+from aws_cdk import (
+    aws_apigatewayv2 as apigwv2,
+    aws_apigatewayv2_integrations as integrations,
+)
+```
 Re-run:
 ```sh
 pip install -r requirements.txt
 ```
+Run:
+```sh
+cdk deploy
+```
+Go back to AWS Kambda -> Functions and you should find the API Gateway trigger already connected to your Lambda function. When you open the URL provided it should work.
 
-### Wrapping up
+### Full Tutorial video
+
+[AWS CDK Tutorial: Deploy a Python Lambda Function using AWS](https://www.youtube.com/watch?v=o3s4VqlMsT8)
